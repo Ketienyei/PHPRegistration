@@ -67,8 +67,8 @@ if(isset($_POST['save'])){
     if(empty($_POST['firstname'])){
         $errors['firstname'] = 'firstname cannot be empty <br>';
     }else{
-        //echo $_POST ['firstname]
-        //echo $_POST ['course]
+        //echo $_POST ['firstname];
+        // echo $_POST ['course]
         $firstname = $_POST['firstname'];
         if(!preg_match('/^[a-zA-Z\s] +$/', $firstname)){
             $errors['firstname'] = 'firstname must be letters and spaces only <br>';
@@ -101,33 +101,33 @@ if(isset($_POST['save'])){
         $email = $_POST['email'];
         if(!filter_var($email, FILTER_VALIDATE_EMAIL))
             $errors['email'] = 'email must be a vaild email adress';
-        }
+        };
+    }
+
      if(array_filter($errors)){
-        //echo'There are errors in the form';
-     }else{
-        //echo'No errors in the form';
-        /*$statement = $databaseConnection->prepare(
+        echo'There are errors in the form';
+     }else{ 
+        echo'No errors in the form';
+        $statement = $databaseConnection->prepare(
             "INSERT INTO sample(firstname,lastname, email,course)
-            VALUES($firstname,$lastname, $email,$course);)
-            $statement->execute();*/
+            VALUES($firstname,$lastname, $email,$course)");
+        $statement->execute();}
             try
             {
-                $query = "INSERT INTO sample(firstname,lastname, email,course) VALUES(:firstname, :lastname, :email, :course);
+                $query = "INSERT INTO sample(firstname,lastname, email,course,))VALUES(:firstname, :lastname, :email, :course)";
                 $query_run = $databaseConnection->prepare($query);
                 $data = [
                     ':firstname' =>$firstname,
                     ':lastname' => $lastname,
                     ':email' => $email,
                     ':course' => $course,
-            ];
+            ] ;
             $query_execute =$query_run-> execute($data);
             if($query_exacute){
-                echo '<script> alert('Data added Succeffully')</script>';
+                echo '<script> alert("Data added Succeffully")<script>' ;
             }else{
-                echo'<script> alert ('Data NOT added')</script>;
-     }
-     }catch (PDOException $err){
-        echo $err->getmessage()};
-        
-    
-        <?
+                echo'<script>alert ("Data NOT added")</script>;}
+     };
+    }
+     ?>
+     
