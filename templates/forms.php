@@ -12,7 +12,7 @@
 <body>
 
 
-<?php include('templates/header.php'); ?>
+<?php //include('templates/header.php'); ?>
 <?php include ('dbh.php');?>
 
     <div class="col-md-4 offset-md-4">
@@ -54,6 +54,7 @@
     
 
     <?php include('templates/footer.php'); ?>
+    <?php include('templates/signup.php'); ?>
 
 </body>
 </html>
