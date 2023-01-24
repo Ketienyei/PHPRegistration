@@ -127,8 +127,10 @@ if(isset($_POST['save'])){
             if($query_exacute){
                 echo '<script> alert("Data added Succeffully")<script>' ;
             }else{
-                echo'<script>alert ("Data NOT added")</script>;}
-     };
+                //echo'<script>alert ("Data NOT added")</script>;
+     }
+    }catch(PDOException $err){
+        echo $err->getmessage();
     }
      ?>
      
