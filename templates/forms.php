@@ -59,6 +59,7 @@
 </html>
 
 <?php
+
 $firstname =$lastname = $email= $course ='';
 $errors =array('fiestname'=>'','lastname'=>'','email'=>'','course'=>'');
 
