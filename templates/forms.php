@@ -12,7 +12,6 @@
 <body>
 
 
-<?php //include('templates/header.php'); ?>
 <?php include ('dbh.php');?>
 
     <div class="col-md-4 offset-md-4">
@@ -51,15 +50,10 @@
     </div>
     
 
-    
-
-    <?php include('templates/footer.php'); ?>
-    <?php include('templates/signup.php'); ?>
-
 </body>
 </html>
 
-<?php
+<?php  
 
 $firstname =$lastname = $email= $course ='';
 $errors =array('fiestname'=>'','lastname'=>'','email'=>'','course'=>'');

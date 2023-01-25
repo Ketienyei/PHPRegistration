@@ -1,14 +1,14 @@
 <?php
 //database connection using PDO
 $host = 'localhost';
-$database = 'studentsdb';
+$database = 'studentdb';
 $firstname = 'root';
 $password = '';
 
-$dsn ="mysql : host= $host;dbnname= $database ";
+$dsn ="mysql:host= $host;dbname= $database ";
 
 try{
-    $databaseConnection = new PDO($dsn, $username, $password);
+    $databaseConnection = new PDO($dsn, $firstname, $password);
     $databaseConnection -> setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
     echo 'Connection to the database has been succesfully';
 }
