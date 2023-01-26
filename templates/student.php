@@ -49,6 +49,7 @@ if($result){
     <td><? $row['email']?></td>  
     <td><? $row['course']?></td>
     
+    
 </tr>
 
 
