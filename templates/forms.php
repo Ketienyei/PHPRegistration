@@ -13,6 +13,19 @@
 
 
 <?php include ('dbh.php');?>
+<div class="hero">
+        <nav>
+            <img src="images/image3.png" class="logo">
+            <ul>
+            <li><a href="forms.php">Registration</a></li>
+             <li><a href="signup.php">sign-up</a></li>
+             <li><a href="crud.php">Edit</li>
+             <li><a href="student.php">Students Details</a></li>
+             </ul>
+
+        </nav>
+</div>
+
 
     <div class="col-md-4 offset-md-4">
      <h2>Enter student details</h2>
