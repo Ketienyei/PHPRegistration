@@ -7,29 +7,42 @@
     <title>Registration</title>
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity=
+"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous">  
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 
 
-<?php include ('dbh.php');?>
+
+<?php include ('dbh.php');
+    // $firstname; $lastname; $email; $course='';
+    $firstname =$lastname = $email= $course ='';
+    $errors =array('firstname'=>'','lastname'=>'','email'=>'','course'=>'');
+
+?>
+
+
 <div class="hero">
         <nav>
-            <img src="images/image3.png" class="logo">
+            <img src="" class="logo">
             <ul>
             <li><a href="forms.php">Registration</a></li>
-             <li><a href="signup.php">sign-up</a></li>
-             <li><a href="crud.php">Edit</li>
-             <li><a href="student.php">Students Details</a></li>
-             </ul>
+            <li><a href="signup.php">sign-up</a></li>
+            <li><a href="crud.php">Edit</li>
+            <li><a href="student.php">Students Details</a></li>
+            </ul>
 
         </nav>
-</div>
 
 
-    <div class="col-md-4 offset-md-4">
+
+    <div class="container my-4">
      <h2>Enter student details</h2>
-     <form action="crud.php  " method="POST">
+     <form action="form.php  " method="POST">
     <div class="form-group"> 
        <input type="text" name="firstname" placeholder=" Enter firstname" class="form-control"
        value="<?php echo htmlspecialchars($firstname);?>">
@@ -59,7 +72,9 @@
     
 
      <button name="save" class="btn btn primary"> Save Details</button>
+     
    </form>
+    </div>
     </div>
     
 
@@ -68,8 +83,7 @@
 
 <?php  
 
-$firstname =$lastname = $email= $course ='';
-$errors =array('fiestname'=>'','lastname'=>'','email'=>'','course'=>'');
+
 
 if(isset($_POST['save'])){  
     //cheking for firstname validation
@@ -114,16 +128,17 @@ if(isset($_POST['save'])){
     }
 
      if(array_filter($errors)){
-        echo'There are errors in the form';
+        // echo'There are errors in the form';
      }else{ 
-        echo'No errors in the form';
-        $statement = $databaseConnection->prepare(
-            "INSERT INTO sample(firstname,lastname, email,course)
-            VALUES($firstname,$lastname, $email,$course)");
-        $statement->execute();}
+        // echo'No errors in the form';
+            // $statement = $databaseConnection->prepare()
+            // "INSERT INTO sample(firstname,lastname, email,course)
+            // VALUES($firstname,$lastname, $email,$course)");
+            // $statement->execute();
+     }
             try
             {
-                $query = "INSERT INTO sample(firstname,lastname, email,course,))VALUES(:firstname, :lastname, :email, :course)";
+                $query = "INSERT INTO studentsdetails (firstname, lastname, email, course) VALUES (:firstname, :lastname, :email, :course)";
                 $query_run = $databaseConnection->prepare($query);
                 $data = [
                     ':firstname' =>$firstname,
@@ -132,13 +147,15 @@ if(isset($_POST['save'])){
                     ':course' => $course,
             ] ;
             $query_execute =$query_run-> execute($data);
-            if($query_exacute){
+            /*if($query_exacute){
                 echo '<script> alert("Data added Succeffully")<script>' ;
             }else{
                 //echo'<script>alert ("Data NOT added")</script>;
-     }
+     }*/
     }catch(PDOException $err){
         echo $err->getmessage();
     }
      ?>
+    
+}
      

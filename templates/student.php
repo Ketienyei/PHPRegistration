@@ -33,14 +33,14 @@
 </body>
 </html>
 <?php
-$query = "SELECT * FROM sample";
+$query = "SELECT * FROM studentsdetails";
 $statement = $databaseConnection->prepare ($query);
 $statement -> execute();
 
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-if($result){
+/*if($result){
    foreach($results as $row ){}
-   }
+   }*/
 
 ?>
 
