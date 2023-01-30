@@ -11,7 +11,7 @@ body{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #c7b2c7; 
+    background: #d6c8d6; 
     
 }
 nav{
@@ -34,4 +34,7 @@ nav ul li a{
 }
 nav ul li a:hover{
     color: blue;
+}
+.container{
+    background-color: #ee82ee;
 }
