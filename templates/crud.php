@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<body>
 <?php
 if (isset($_POST ["delete_student"])){
     $student_id = $_POST['delete_student'];
@@ -30,7 +31,7 @@ if (isset($_POST ["delete_student"])){
         }
     }
     if (isset($_POST["update_student"])){
-        $student_id =htmlspecialchars(($_POST['student_id']);
+        $student_id =htmlspecialchars($_POST['student_id']);
         $firstname =$_POST['firstname'];
         $lastname =$_POST['lastname'];
         $email =$_POST['email'];
@@ -50,17 +51,9 @@ if (isset($_POST ["delete_student"])){
 
             };
         
-        )
-    }
-
+        }
     
-
-
-
-
-
-?>
-<body>
+        ?>
     
 </body>
 </html>
