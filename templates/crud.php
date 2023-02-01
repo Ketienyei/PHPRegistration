@@ -53,7 +53,7 @@ if (isset($_POST ["delete_student"])){
         
         }
     
-        ?>
+        ?> 
     
 </body>
 </html>
