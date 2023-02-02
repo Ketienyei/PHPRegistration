@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">q 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -32,8 +32,10 @@
             <ul>
             <li><a href="forms.php">Registration</a></li>
             <li><a href="signup.php">sign-up</a></li>
-            <li><a href="crud.php">Edit</li>
-            <li><a href="student.php">Students Details</a></li>
+            <li><a href="crud.php">Edit</a></li>
+            <li><a href="student_edit.php">Students Details</a></li>
+            <li><a href="login.php">login</a></li>
+            <li><a href="logout.php">Logout</a></li>
             </ul>
 
         </nav>

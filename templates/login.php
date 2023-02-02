@@ -18,7 +18,7 @@
             <h1 class="text-center pb-5 display-4" >LOGIN</h1>
             <?php 
 
-            if($isset($_GET['error'])) 
+            //if($isset($_GET['error'])) 
             {?>
 
             
@@ -26,12 +26,14 @@
                     <?$_GET['error']?>
                 </div>
                 <?php } ?>
+
+    
                 <div class="mb-1">
                     <label for="Email" class="form-label">Email Adress</label>
                     <input type="email" class="form-control" name="email" id="Email" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-1">
-                    <label for="password" class="form-labal">password</label>
+                    <label for="password" class="form-labal">password</label>  
                     <input type="password" class="form-control" name="password" id="Password">
                 </div>
                 <button type="submit" class="btn btn success">LOGIN</button>
