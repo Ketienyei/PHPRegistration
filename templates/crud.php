@@ -18,6 +18,7 @@ if (isset($_POST ["delete_student"])){
             ':stud_id' => $student_id
         ];
         $statement->execute($data);
+        
         $query_execute = $statement->execute($data);
         if ($query_execute){
             echo'<script> alert("Are you sure you want to delete")</script>';
@@ -26,11 +27,11 @@ if (isset($_POST ["delete_student"])){
         }else{
             
         }
-        }catch(PDOExeption $err){
+        }catch(PDOException $err){
             echo $err->getMessage();
         }
     }
-    if (isset($_POST["update_student"])){
+    if (isset($_POST["update_student"]))
         $student_id =htmlspecialchars($_POST['student_id']);
         $firstname =$_POST['firstname'];
         $lastname =$_POST['lastname'];
@@ -38,22 +39,30 @@ if (isset($_POST ["delete_student"])){
         $course =$_POST['course'];
 
         try{
-            $query ="UPDATE studentsdetails SET firstname=:firstname, lastname=:lastaname, email=:email, course=:course";
+            $query ="UPDATE studentsdetails SET firstname=:firstname, lastname=:lastaname, email=:email, course=:course
+            Id =:stud_id";
+            $statement = $databaseConnection->prepare($query);
             $data = [
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'email' => $email,
-                'course' => $course,
-                'stud_id' => $student_id
+                ':firstname' => $firstname,
+                ':lastname' => $lastname,
+                ':email' => $email,
+                ':course' => $course,
+                ':stud_id' => $student_id
             ];
+            $statement->execute($data);
             $query_execute = $statement->execute($data);
             if($query_execute){
+                header('location: students.php');
+            }else{
 
-            };
+            }
         
+        }catch (PDOException $err){
+            echo $err->getmessage();
         }
     
         ?> 
+    
     
 </body>
 </html>

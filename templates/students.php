@@ -32,30 +32,38 @@
         <th>Delete</th>
            
         </tr>
-        </table>
     </div>
     
 </body>
 </html>
 <?php
 $query = "SELECT * FROM studentsdetails";
-$statement = $databaseConnection->prepare ($query);
+$statement = $databaseconnection->prepare($query);
 $statement -> execute();
 
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-/*if($result){
-   foreach($results as $row ){}
-   }*/
-
+if($result){
+   foreach($results as $row ){
 ?>
 
 <tr>
-    <td><? $row['firstname']?></td>
-    <td><? $row['lastname']?></td>
-    <td><? $row['email']?></td>  
-    <td><? $row['course']?></td>
-    
-    
+    <td><? $row['firstname'];?></td>
+    <td><? $row['lastname'];?></td>
+    <td><? $row['email'];?></td>  
+    <td><? $row['course'];?></td>
+    <td> <a href="student_edit.php?id=<?=$row['id'];?>" class="btn btn-primary btn-sm"  name="Edit_students">Edit</a></td>
+
+    <td>
+        <form action="crud.php" method="POST">
+            <button value="<?=$row['id'];?>" class="btn btn-danger btn-sm" name="delete_students">Delete</button>
+        </form>
+    </td>
 </tr>
+<?php
+   }
+}
+?>
+</table>
+
 
 
