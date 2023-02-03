@@ -30,16 +30,13 @@
                     header("Location: login.php?erorr=Incorrect Username or Password");
                 }
             }else{
-                header("Location: login.php?erorr=Incorrect Username or Password");
+                header("Location: signup.php?erorr=Incorrect Username or Password");
             }
         }else{
             header("Location: login.php?erorr=Incorrect Username or Password");
         }
     }
             
-
-    
-
 
 
 ?>

@@ -38,12 +38,12 @@
 </html>
 <?php
 $query = "SELECT * FROM studentsdetails";
-$statement = $databaseconnection->prepare($query);
+$statement = $databaseConnection->prepare($query);
 $statement -> execute();
 
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-if($result){
-   foreach($results as $row ){
+//f($result){
+   //foreach($results as $row ){
 ?>
 
 <tr>
@@ -60,8 +60,8 @@ if($result){
     </td>
 </tr>
 <?php
-   }
-}
+   
+
 ?>
 </table>
 
