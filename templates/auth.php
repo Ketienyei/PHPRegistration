@@ -11,7 +11,7 @@
     if (empty($email)){
         header("Location: login.php?error=[emailis required");
     }else{
-        $statement =$databaseConnection->prepare("SELECT *FROM users WHERE email=?");
+        $statement =$databaseconnection->prepare("SELECT *FROM users WHERE email=?");
         $statement->execute ([$email]);
 
         if($statement->rowCount()===1){ 
@@ -30,15 +30,13 @@
                     header("Location: login.php?erorr=Incorrect Username or Password");
                 }
             }else{
-                header("Location: signup.php?erorr=Incorrect Username or Password");
+                header("Location: login.php?erorr=Incorrect Username or Password");
             }
         }else{
             header("Location: login.php?erorr=Incorrect Username or Password");
         }
     }
             
-
-
 ?>
 </body>
 </html>

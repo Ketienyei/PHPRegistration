@@ -38,7 +38,7 @@
 </html>
 <?php
 $query = "SELECT * FROM studentsdetails";
-$statement = $databaseConnection->prepare($query);
+$statement = $databaseconnection->prepare($query);
 $statement -> execute();
 
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
